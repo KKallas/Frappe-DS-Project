@@ -7,4 +7,7 @@ import frappe
 from frappe.model.document import Document
 
 class DSTask(Document):
-	pass
+	def on_update(self):
+		## check if the prj is set
+		## if so then call update tasks on the owner project
+		pass

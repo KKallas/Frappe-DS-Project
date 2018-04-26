@@ -14,8 +14,25 @@ frappe.ui.form.on('Project', {
 
 		//set the links with proper filtration
 		$.find(".badge-link")[0].onclick=function() {
-    		//frappe.route_options = {"project": frm.doc.name};
-    		frappe.set_route("List", "DS Task",{"prj": frm.doc.name});
+				// TODO: make the route to user last Kanban view for the DS Task, if user has not been there send to listview
+				/*const user_settings = frappe.get_user_settings('DS Task')['Kanban'] || {};
+				if(!user_settings.last_kanban_board) {
+					frappe.set_route('List', 'DS Task', 'List');
+					return true;
+				}*/
+				//remove previous filters
+				/*
+				try {
+					frappe.views.list_view["List/DS Task/List"].filter_area.remove("prj");
+				} catch(e) {
+					console.log("no filter avaiable");
+				}
+				//set new prj
+				frappe.route_options = {"prj": frm.doc.name};
+    		//frappe.set_route("List", "DS Task","Kanban",user_settings.last_kanban_board,{"prj": frm.doc.name});
+				frappe.set_route("List","DS Task");*/
+				frappe.set_route("List","DS Task","Kanban");
+				return true;
     	};
 	}
 });
