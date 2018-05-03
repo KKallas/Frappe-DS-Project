@@ -28,9 +28,10 @@ frappe.ui.form.on('Project', {
 					console.log("no filter avaiable");
 				}
 				//set new prj
-				frappe.route_options = {"prj": frm.doc.name};
+
     		//frappe.set_route("List", "DS Task","Kanban",user_settings.last_kanban_board,{"prj": frm.doc.name});
 				frappe.set_route("List","DS Task");*/
+				frappe.route_options = {"prj": frm.doc.name};
 				frappe.set_route("List","DS Task","Kanban");
 				return true;
     	};
