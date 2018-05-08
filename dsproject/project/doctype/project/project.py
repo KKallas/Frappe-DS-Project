@@ -15,7 +15,7 @@ class Project(Document):
 #to set badge count in Department
 @frappe.whitelist()
 def getTaskCount(name):
-	tasks_total = frappe.db.sql("""select name from `tabDS Task` where prj=%s""",name)
+	tasks_total = frappe.db.sql("""select name from `tabDS Task` where prj=%s and prjstate != "Done" """,name)
 	#TODO change the filter to DS Task state based
 	tasks_open = frappe.db.sql("""select name from `tabDS Task` where prj=%s and prjstate="Done" """,name)
 	return [len(tasks_total),len(tasks_open)]

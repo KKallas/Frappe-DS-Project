@@ -35,5 +35,13 @@ frappe.ui.form.on('Project', {
 				frappe.set_route("List","DS Task","Kanban");
 				return true;
     	};
+		$.find(".open-notification")[0].onclick=function() {
+				frappe.route_options = {
+						"prjstate":["!=","Done"],
+						"prj": frm.doc.name
+					};
+				frappe.set_route("List","DS Task","Kanban");
+				return true;
+			};
 	}
 });
