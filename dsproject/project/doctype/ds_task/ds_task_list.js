@@ -5,7 +5,7 @@
 //frappe.views.KanbanView = 0;
 //TODO override the KanbanView init with necessary code
 
-function waitForKanban(){
+/* function waitForKanban(){
     if(typeof frappe.views.KanbanBoard !== "undefined"){
         var slice_pos = frappe.views.KanbanBoard.toString().indexOf("function prepare()")-6;
         var part_one = frappe.views.KanbanBoard.toString().substr(0,slice_pos);
@@ -20,7 +20,7 @@ function waitForKanban(){
 }
 waitForKanban();
 
-
+*/
 
 frappe.listview_settings['DS Task'] = {
   onload: function(me) {

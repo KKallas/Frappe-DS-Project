@@ -3,6 +3,12 @@
 
 frappe.ui.form.on('DS Task', {
 	refresh: function(frm) {
+		//how to set a value - default functionality
+		//frm.set_value("deadline","01-05-2018");
+		//where to look for "current" project
+		//frappe.views.list_view["List/DS Task/Kanban/Task List"].filter_area.filter_list.filters
+
+		//kui on uus dokk
 
 	},
 	//updateing prj will take the department value from prj
@@ -14,5 +20,5 @@ frappe.ui.form.on('DS Task', {
 				frm.set_value("dept", r.message);
     	}
 		});
-	}
+	},
 });

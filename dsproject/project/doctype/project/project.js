@@ -31,7 +31,9 @@ frappe.ui.form.on('Project', {
 
     		//frappe.set_route("List", "DS Task","Kanban",user_settings.last_kanban_board,{"prj": frm.doc.name});
 				frappe.set_route("List","DS Task");*/
-				frappe.route_options = {"prj": frm.doc.name};
+				frappe.route_options = {
+						"prj": frm.doc.name
+					};
 				frappe.set_route("List","DS Task","Kanban");
 				return true;
     	};
